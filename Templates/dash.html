@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- D3 -->
+    <script type="text/javascript" src="js/d3.js"></script>
+    <!-- Sheetsee.js Google Spreadsheet -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript"  src="js/tabletop1.3.4.js"></script>
+    <script type="text/javascript" src="js/sheetsee.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+</head>
+    <!-- D3 Style-->
+<style>
+    #pennies.axis {shape-rendering: crispEdges;}
+    #pennies.x.axis .minor, #pennies.y.axis .minor {stroke-opacity: .5;}
+    #pennies.x.axis {stroke-opacity: 1;}
+    #pennies.y.axis line, #pennies.y.axis path, #pennies.x.axis path {fill: none; stroke: #acacac; stroke-width: 1;}
+    #pennies .x.axis line {stroke: #acacac; stroke-opacity: .75;}
+    .bigg {-webkit-transition: all .2s ease-in-out; -webkit-transform: scale(2);}
+    path.chartLine {stroke: #14ECC8; stroke-width: 3; fill: none;}
+    #pennies div.tooltip {position: absolute; text-align: left; padding: 4px 8px; width: auto; font-size: 10px; height: auto; background: #fff; border: 0px; pointer-events: none;}
+    circle {fill: #fff; cursor: pointer;}
+    path.domain {fill: #CCF4FF;}
+</style>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        3EGA
+                    </a>
+                </li>
+                <li>
+                    <a href="/dash">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/mapa">Mapa</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="/services">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a role="button" class="btn btn-primary btn-lg" href="dashEdades">Edades</a>
+            <a role="button" class="btn btn-primary btn-lg" href="dashHijos">Hijos</a>
+            <a role="button" class="btn btn-primary btn-lg" href="dashInteres">Intereses</a>
+            <a role="button" class="btn btn-primary btn-lg" href="dashOficina">Oficinas</a>
+            <a role="button" class="btn btn-primary btn-lg" href="dashPorcentaje">Procedencia</a>       
+            <a role="button" class="btn btn-primary btn-lg" href="mapa">Mapa</a> 
+            <a role="button" class="btn btn-primary btn-lg" href="twitter">Twitter</a> 
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- D3 -->
+    <script type="text/javascript" src="js/d3.js"></script>
+    <!-- Sheetsee.js Google Spreadsheet -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript"  src="http://jlord.us/sheetsee.js/js/tabletop1.3.4.js"></script>
+    <script type="text/javascript" src="http://jlord.us/sheetsee.js/js/sheetsee.js"></script>
+    <script type="text/javascript" src="js/highlight.js"></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- D3 Style-->
+</head>
+    <style>
+    #map, #shapesmap {max-width: 1920px; height: 1080px;}
+    .leaflet-popup-content li {list-style:none;}
+    .leaflet-popup-content {width: 102px;}
+    .leaflet-popup-content img {width: 100px;}
+  </style>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        3EGA
+                    </a>
+                </li>
+                <li>
+                    <a href="/dash">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/mapa">Mapa</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="/services">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+                        <div>
+                            <div id="map"></div>
+                        </div>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script type="text/javascript">
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var URL = "1Wc4623axT_pwezVxF2aiJLPu15YBiB5xWj9zGZfIz3w"
+        Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+      })
+
+      function showInfo(data) {
+        var gData = data
+        var optionsJSON = ["origen"]
+        var template = "<h4>{{origen}}</h4>"
+        var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON)
+        var map = Sheetsee.loadMap("map")
+        Sheetsee.addTileLayer(map, "https://api.mapbox.com/v4/labcdmx.o2llb6h2.json?access_token=pk.eyJ1IjoibGFiY2RteCIsImEiOiJGY2sxRWhzIn0.3Hlxrge8xJOQBWne6i_TJg")
+        Sheetsee.addMarkerLayer(geoJSON, map)
+      }
+            
+
+    </script>
+
+    <script>
+<!--
+
+/*
+Auto Refresh Page with Time script
+By JavaScript Kit (javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+//enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+/*var limit="0:30"
+
+var doctitle = document.title
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+
+function beginrefresh(){
+    if (parselimit==1)
+        window.location.reload()
+    else{ 
+        parselimit-=1
+        curmin=Math.floor(parselimit/60)
+        cursec=parselimit%60
+        if (curmin!=0)
+            curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+        else
+            curtime=cursec+" seconds left until page refresh!"
+        document.title = doctitle + ' (' + curtime +')'
+        setTimeout("beginrefresh()",1000)
+    }
+}
+
+if (window.addEventListener)
+    window.addEventListener("load", beginrefresh, false)
+else if (window.attachEvent)
+    window.attachEvent("load", beginrefresh)
+
+//-->
+</script>
+
+</body>
+
+</html>
